@@ -1,24 +1,27 @@
 <h1>Listing todo_lists</h1>
 
-<table>
+<table style="text-align: left; width: 80%; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="0">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th></th>
+      <td style="vertical-align: top; font-weight: bold; text-align: center; background-color: rgb(204, 255, 255);">
+        Title
+      </td>
+      <td style="vertical-align: top; font-weight: bold; text-align: center; background-color: rgb(204, 255, 255);">
+        Description
+      </td>
+      <td colspan="4" rowspan="1" style="vertical-align: top; font-weight: bold; text-align: center; background-color: rgb(204, 255, 255);">
+        Functions
+      </td>
     </tr>
-  </thead>
 
-  <tbody>
     <% @todo_lists.each do |todo_list| %>
       <tr id="<%= dom_id(todo_list) %>">
-        <td><%= todo_list.title %></td>
-        <td><%= todo_list.description %></td>
-        <td>
-          <%= link_to "List Items", todo_list_todo_items_path(todo_list) %>
-          <%= link_to 'Show', todo_list %>
-          <%= link_to 'Edit', edit_todo_list_path(todo_list) %>
-          <%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <td style="padding-left:5px;"><%= todo_list.title %></td>
+        <td style="padding-left:5px;"><%= todo_list.description %></td>
+        <td style="padding-left:5px;"><%= link_to "List Items", todo_list_todo_items_path(todo_list) %></td>
+        <td style="padding-left:5px;">  <%= link_to 'Show', todo_list %></td>
+        <td style="padding-left:5px;">  <%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
+        <td style="padding-left:5px;"> <%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </td>
       </tr>
     <% end %>
