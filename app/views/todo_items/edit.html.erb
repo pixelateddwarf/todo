@@ -1,4 +1,6 @@
-<h1><%= @todo_list.title %> - Editing Todo List Item</h1>
-<%= form_for [@todo_list, @todo_item] do |form| %>
-  <%= render partial: form %>
-<% end %>
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+  <h1><%= @todo_list.title %> - Editing Todo List Item</h1>
+  <%= form_for [@todo_list, @todo_item] do |form| %>
+    <%= render partial: form %>
+  <% end %>
+</div>
