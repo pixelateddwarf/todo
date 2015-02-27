@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150220225523) do
     t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "completed_at"
   end
 
   add_index "todo_items", ["todo_list_id"], name: "index_todo_items_on_todo_list_id", using: :btree

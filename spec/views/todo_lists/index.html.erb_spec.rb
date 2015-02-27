@@ -16,7 +16,6 @@ describe "todo_lists/index" do
 
   it "renders a list of todo_lists" do
     render
-    assert_select "tr>td", :text => "Title".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
+    assert_select "tr", :count => 3
   end
 end
